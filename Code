@@ -1,0 +1,37 @@
+# Simple Pet Shop Management
+
+records = []
+
+# Add customer records
+n = int(input("How many customers? "))
+
+for i in range(n):
+    print("\nEnter Details of Customer", i + 1)
+
+    customer = {
+        "Customer Name": input("Customer Name: "),
+        "Animal Name": input("Animal Name: "),
+        "Breed": input("Animal Breed: "),
+        "Price": input("Price: "),
+        "Date Sold": input("Date Sold: ")
+    }
+
+    records.append(customer)
+
+# Search customer
+name = input("\nEnter customer name to search: ")
+
+found = False
+
+for customer in records:
+    if customer["Customer Name"].lower() == name.lower():
+        print("\nCustomer Details")
+        print("Customer Name:", customer["Customer Name"])
+        print("Animal Name:", customer["Animal Name"])
+        print("Breed:", customer["Breed"])
+        print("Price:", customer["Price"])
+        print("Date Sold:", customer["Date Sold"])
+        found = True
+
+if not found:
+    print("Customer not found")
